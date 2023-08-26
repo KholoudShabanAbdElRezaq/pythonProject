@@ -6,11 +6,15 @@ without_dup = x.drop_duplicates()
 print(without_dup)
 without_dup['Age'] = without_dup['Age'].round(0)
 print("The Age Without Decimal Point:")
+print(without_dup['Age'])
 print(without_dup)
+f = without_dup['Salary(USD)'] * 30.9
+print('The Convert the USD salary to EGP')
+print(f)
 var = without_dup['Age']
-print('The Average Of Age: ')
+print('The Average Of Age:')
 print(sum(var / len(var)))
-varr = without_dup['Salary(USD)']
+varr = x['Salary(USD)']
 v = without_dup['Salary(USD)'] = varr.median()
 print("The Median Salaries")
 print(v)
@@ -18,7 +22,5 @@ print("Ration between males and female employees")
 print(f"M : {len(without_dup[without_dup['Gender'] == 'M'])}")
 print(f"F : {len(without_dup[without_dup['Gender'] == 'F'])}")
 
-file = open('/Users/user/Downloads/Employee.csv')
-writer = csv.writer(file)
-writer.writerows(without_dup)
-file.close()
+
+without_dup.to_csv('/Users/user/Downloads/new_Employees.csv')
