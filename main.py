@@ -5,10 +5,10 @@ x = pd.read_csv('/Users/user/Downloads/Employees.csv')
 without_dup = x.drop_duplicates()
 print(without_dup)
 without_dup['Age'] = without_dup['Age'].round(0)
-print("The Age Without Decimal Point")
+print("The Age Without Decimal Point:")
 print(without_dup)
 var = without_dup['Age']
-print('The Average Of Age ')
+print('The Average Of Age: ')
 print(sum(var / len(var)))
 varr = without_dup['Salary(USD)']
 v = without_dup['Salary(USD)'] = varr.median()
