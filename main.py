@@ -13,14 +13,19 @@ print('The Convert the USD salary to EGP')
 print(f)
 var = without_dup['Age']
 print('The Average Of Age:')
-print(sum(var / len(var)))
+Avg = sum(var / len(var))
+print(Avg)
 varr = x['Salary(USD)']
 v = without_dup['Salary(USD)'] = varr.median()
 print("The Median Salaries")
 print(v)
 print("Ration between males and female employees")
+num_males = sum(without_dup['Gender'] == 'M')
+num_females = len(without_dup['Gender']) - num_males
 print(f"M : {len(without_dup[without_dup['Gender'] == 'M'])}")
 print(f"F : {len(without_dup[without_dup['Gender'] == 'F'])}")
 
-
-without_dup.to_csv('/Users/user/Downloads/new_Employees.csv')
+with open('/Users/user/Downloads/new_Employees.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(["Average age", "Median Salaries", "num_females", 'num_males'])
+    writer.writerow([Avg, v, num_females, num_males])
