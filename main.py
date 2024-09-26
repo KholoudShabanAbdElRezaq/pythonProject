@@ -1,6 +1,6 @@
 import pandas as pd
 import csv
-
+//read file
 x = pd.read_csv('/Users/user/Downloads/Employees.csv')
 without_dup = x.drop_duplicates()
 print(without_dup)
